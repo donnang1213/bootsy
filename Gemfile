@@ -1,13 +1,15 @@
 source 'http://rubygems.org'
 
 # Gems used by the dummy application
-gem 'rails', '4.2.5.1'
+gem 'rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'sass-rails'
-gem 'bootstrap-sass'
+gem 'rails-assets-tether'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'sqlite3'
 gem 'simple_form'
 gem 'sprockets-rails', '~> 2.3'
+gem 'font-awesome-sass'
 
 gemspec
 
