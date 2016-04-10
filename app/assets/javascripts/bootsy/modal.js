@@ -66,7 +66,11 @@ Bootsy.Modal = function(area) {
 
 // Show modal
 Bootsy.Modal.prototype.show = function() {
-  this.$el.modal('show');
+  this.$el.modal({
+    show: true,
+    backdrop: 'static',
+    keyboard: false
+  });
 };
 
 // Gallery loading
