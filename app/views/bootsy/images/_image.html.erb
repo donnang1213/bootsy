@@ -7,22 +7,14 @@
 
     <% Bootsy.image_versions_available.each do |size| %>
       <li role="presentation" class="dropdown dropdown-submenu">
-        <%= link_to '#', tabindex: '-1', role: 'menuitem', data: { toggle: 'dropdown' } do %>
+        <%= link_to '#', class: 'insert', tabindex: '-1', role: 'menuitem', data: { image_size: size.to_s, position: 'inline'} do %>
           <i class="icon-picture"></i>
 
           <%= t size, scope: 'bootsy.image' %>
+          <%= t position, scope: 'bootsy.image.position' %>
         <% end %>
 
-        <ul id="any-change" class="dropdown-menu" role="menu">
-          <% [:inline].each do |position| %>
-            <li role="presentation">
-              <%= link_to '#', class: 'insert', tabindex: '-1', role: 'menuitem',
-                data: { image_size: size.to_s, position: position.to_s} do %>
-                <%= t position, scope: 'bootsy.image.position' %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+
       </li>
     <% end %>
 
