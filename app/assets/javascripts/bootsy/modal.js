@@ -12,7 +12,6 @@ Bootsy.Modal = function(area) {
   this.$el.parents('form').after(this.$el);
 
   this.$el.on('click', '.bootsy-image .insert', function(event) {
-    console.log($(this).data('is-mobile'));
     var img, imageObject;
     var imagePrefix = '/' + $(this).attr('data-image-size') + '_';
 
@@ -32,7 +31,6 @@ Bootsy.Modal = function(area) {
     imageObject.align = $(this).data('position');
 
     if($(this).data('is-mobile')) {
-      console.log('is mobile, setting width and height');
       imageObject.height = '100%';
       imageObject.width = '100%';
     }
