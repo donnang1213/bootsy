@@ -9,5 +9,21 @@ module Bootsy
     def resource_or_nil(resource)
       resource if resource.present? && resource.persisted?
     end
+
+  def is_mobile
+    response = false
+    case request.user_agent
+      when /iPhone/i
+        response = true
+      when /Android/i && /mobile/i
+        response = true
+      when /Windows Phone/i
+        response = true
+      else
+        response = false
+    end
+    response
+  end
+      
   end
 end
