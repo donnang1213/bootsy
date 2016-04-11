@@ -30,7 +30,7 @@ Bootsy.Modal = function(area) {
 
     imageObject.align = $(this).data('position');
 
-    if($(this).data('is_mobile')) {
+    if($(this).data('is-mobile') === 'true') {
       console.log('is mobile, setting width and height');
       imageObject.height = '100%';
       imageObject.width = '100%';
