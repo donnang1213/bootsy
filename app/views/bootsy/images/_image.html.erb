@@ -6,8 +6,6 @@
   <% end %>  
 
   <%= link_to image_tag(image.image_file.thumb.url), '#', class: 'thumbnail insert',
-  data: { image_size: 'small', position: 'inline'}%>
-
-  <%= is_mobile %>
+  data: { image_size: 'small', position: 'inline', is_mobile: is_mobile }%>
 
 </div>

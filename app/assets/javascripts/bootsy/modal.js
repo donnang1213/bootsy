@@ -30,6 +30,11 @@ Bootsy.Modal = function(area) {
 
     imageObject.align = $(this).data('position');
 
+    if($(this).data('is_mobile') === 'true') {
+      imageObject.height = '100%';
+      imageObject.width = '100%';
+    }
+
     self.$el.modal('hide');
 
     insert = self.area.insertImage.bind(self.area);
