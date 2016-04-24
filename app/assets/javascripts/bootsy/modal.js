@@ -31,8 +31,8 @@ Bootsy.Modal = function(area) {
     imageObject.align = $(this).data('position');
 
     if($(this).data('is-mobile')) {
-      imageObject.height = 'auto';
-      imageObject.width = 'auto';
+      imageObject.height = '100%';
+      imageObject.width = '100%';
     }
 
     self.$el.modal('hide');
