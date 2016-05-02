@@ -33,7 +33,7 @@ module Bootsy
     end
 
     def extension_white_list
-      %w(jpg jpeg gif png)
+      %w(jpg jpeg png)
     end
   end
 end
