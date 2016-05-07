@@ -91,15 +91,6 @@ module Bootsy
               render json: @image.errors, status: :unprocessable_entity
             end
           end
-        rescue Exception => e   
-          if e.message == 'file upload too large'
-            format.json do
-              render json: 'image size exceeded', status: :unprocessable_entity
-            end            
-          else
-            raise e
-          end
-        end
       end
 
     end
