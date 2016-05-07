@@ -77,30 +77,31 @@ module Bootsy
 
     def create_and_respond
       respond_to do |format|
-        if @image.save
-          format.json do
-            render json: {
-              image: image_markup(@image),
-              form: new_image_markup(@gallery),
-              gallery_id: @gallery.id
-            }
+        being
+          if @image.save
+            format.json do
+              render json: {
+                image: image_markup(@image),
+                form: new_image_markup(@gallery),
+                gallery_id: @gallery.id
+              }
+            end
+          else
+            format.json do
+              render json: @image.errors, status: :unprocessable_entity
+            end
           end
-        else
-          format.json do
-            render json: @image.errors, status: :unprocessable_entity
+        rescue Exception => e   
+          if e.message == 'file upload too large'
+            format.json do
+              render json: 'image size exceeded', status: :unprocessable_entity
+            end            
+          else
+            raise e
           end
         end
-
-      rescue Exception => e 
-        if e.message == 'file upload too large'
-          format.json do
-            render json: 'Image size should be smaller than 2 MB', status: :unprocessable_entity
-          end          
-        else
-          raise e
-        end
-
       end
+
     end
   end
 end
