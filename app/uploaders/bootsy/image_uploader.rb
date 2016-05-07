@@ -8,7 +8,7 @@ module Bootsy
       "#{Bootsy.store_dir}/#{model.class.to_s.underscore}/#{model.id}"
     end
 
-    process resize_to_limit: [1160, 2000] , :if =>:pre_limit
+    # process resize_to_limit: [1160, 2000] , :if =>:pre_limit
 
     version :large, :if =>:pre_limit do
       process resize_to_fit: [
@@ -36,12 +36,12 @@ module Bootsy
       %w(jpg jpeg png)
     end
 
-  def pre_limit file
-    if file && file.size > 2.megabytes
-      raise Exception.new("file upload too large")
+    def pre_limit file
+      if file && file.size > 2.megabytes
+        raise Exception.new("file upload too large")
+      end
+      true
     end
-    true
-  end
 
   end
 end
