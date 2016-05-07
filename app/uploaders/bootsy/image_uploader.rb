@@ -16,7 +16,7 @@ module Bootsy
       ]
     end
 
-    version :medium , :if =>:pre_limitdo
+    version :medium , :if =>:pre_limit do
       process resize_to_fit: [
         Bootsy.medium_image[:width], Bootsy.medium_image[:height]
       ]
