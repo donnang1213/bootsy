@@ -157,7 +157,6 @@ Bootsy.Modal.prototype.imageUploadFailed = function(_e, xhr, _status, error) {
 // Add image to gallery
 Bootsy.Modal.prototype.addImage = function(html) {
   this.hideEmptyAlert();
-  this.showReminder();
 
   $(html).hide().appendTo(this.$el.find('.bootsy-gallery')).fadeIn(200);
 };
