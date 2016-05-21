@@ -323,10 +323,6 @@ textarea.bootsy:required:invalid {
   margin: 0 auto;
 }
 
-.bootsy-click-thumbnail-alert {
-  display: none;
-}
-
 /*The below code is needed for capybara to be able to find the input, as it*/
 /*does not work*/
 .file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover {
