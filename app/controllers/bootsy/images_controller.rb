@@ -77,22 +77,21 @@ module Bootsy
 
     def create_and_respond
       respond_to do |format|
-        being
-          if @image.save
-            format.json do
-              render json: {
-                image: image_markup(@image),
-                form: new_image_markup(@gallery),
-                gallery_id: @gallery.id
-              }
-            end
-          else
-            format.json do
-              render json: @image.errors, status: :unprocessable_entity
-            end
+        if @image.save
+          format.json do
+            render json: {
+              image: image_markup(@image),
+              form: new_image_markup(@gallery),
+              gallery_id: @gallery.id
+            }
           end
-      end
+        else
+          format.json do
+            render json: @image.errors, status: :unprocessable_entity
+          end
+        end
 
+      end
     end
   end
 end
