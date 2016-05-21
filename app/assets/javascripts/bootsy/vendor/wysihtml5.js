@@ -8466,7 +8466,8 @@ wysihtml5.views.View = Base.extend(
       shortcuts = {
         "66": "bold",     // B
         "73": "italic",   // I
-        "85": "underline" // U
+        "85": "underline", // U
+        "75": "createLink" 
       };
 
   wysihtml5.views.Composer.prototype.observe = function() {
