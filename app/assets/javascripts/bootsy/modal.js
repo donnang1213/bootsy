@@ -104,7 +104,6 @@ Bootsy.Modal.prototype.showEmptyAlert = function() {
 Bootsy.Modal.prototype.hideEmptyAlert = function() {
   this.$el.find('.bootsy-empty-alert').fadeOut(200);
   this.$el.find('.bootsy-click-thumbnail-alert').removeClass('hidden');
-  this.$el.find('.bootsy-click-thumbnail-alert').fadeIn(200);
 };
 
 // Manual refresh button
