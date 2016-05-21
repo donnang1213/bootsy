@@ -67,7 +67,6 @@ Bootsy.Modal = function(area) {
 
   this.hideRefreshButton();
   this.hideEmptyAlert();
-  this.showReminder();
 };
 
 // Show modal
@@ -99,15 +98,13 @@ Bootsy.Modal.prototype.hideUploadLoadingAnimation = function() {
 
 // Alert for empty gallery
 Bootsy.Modal.prototype.showEmptyAlert = function() {
+  this.$el.find('.bootsy-click-thumbnail-alert').hide();
   this.$el.find('.bootsy-empty-alert').fadeIn(200);
 };
 
 Bootsy.Modal.prototype.hideEmptyAlert = function() {
   this.$el.find('.bootsy-empty-alert').fadeOut(200);
-};
-
-Bootsy.Modal.prototype.showReminder = function() {
-  this.$el.find('.bootsy-click-thumbnail-alert').removeClass('hidden');
+  this.$el.find('.bootsy-click-thumbnail-alert').show();
 };
 
 // Manual refresh button
