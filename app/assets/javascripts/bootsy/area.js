@@ -72,10 +72,6 @@ Bootsy.Area.prototype.init = function() {
       return true;
     }.bind(this));
 
-    $(this.editor.currentView.element).bind('keypress', function(event) {
-      console.log('binded');
-    });
-
     this.$el.data('bootsy-initialized', true);
   }
 };
