@@ -60,6 +60,7 @@ Bootsy.Area.prototype.init = function() {
     }
 
     this.editor = this.$el.wysihtml5($.extend(true, {}, Bootsy.options, this.options)).data('wysihtml5').editor;
+    debugger
 
     // Mechanism for unsaved changes alert
     if (this.options.alertUnsavedChanges !== false) {
