@@ -8466,8 +8466,7 @@ wysihtml5.views.View = Base.extend(
       shortcuts = {
         "66": "bold",     // B
         "73": "italic",   // I
-        "85": "underline", // U
-        "75": "createLink" 
+        "85": "underline" // U
       };
 
   wysihtml5.views.Composer.prototype.observe = function() {
@@ -9476,7 +9475,6 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
       });
 
       try {
-        console.log("Heya! This page is using wysihtml5 for rich text editing. Check out https://github.com/xing/wysihtml5");
       } catch(e) {}
     },
 
