@@ -72,6 +72,12 @@ Bootsy.Area.prototype.init = function() {
       return true;
     }.bind(this));
 
+    this.$el.bind('keypress', function(event) {
+      if( event.which === 65 && event.shiftKey ) {
+        alert('you pressed SHIFT+A');
+      }
+    });
+
     this.$el.data('bootsy-initialized', true);
   }
 };
