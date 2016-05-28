@@ -73,6 +73,7 @@ Bootsy.Area.prototype.init = function() {
     }.bind(this));
 
     this.$el.bind('keypress', function(event) {
+      debugger
       if( event.which === 65 && event.shiftKey ) {
         alert('you pressed SHIFT+A');
       }
