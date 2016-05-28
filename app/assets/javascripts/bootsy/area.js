@@ -60,7 +60,6 @@ Bootsy.Area.prototype.init = function() {
     }
 
     this.editor = this.$el.wysihtml5($.extend(true, {}, Bootsy.options, this.options)).data('wysihtml5').editor;
-    debugger
 
     // Mechanism for unsaved changes alert
     if (this.options.alertUnsavedChanges !== false) {
@@ -74,9 +73,7 @@ Bootsy.Area.prototype.init = function() {
     }.bind(this));
 
     $(this.editor.currentView.element).bind('keypress', function(event) {
-      if( event.which === 65 && event.shiftKey ) {
-        alert('you pressed SHIFT+A');
-      }
+      console.log('binded');
     });
 
     this.$el.data('bootsy-initialized', true);
