@@ -8,7 +8,7 @@
         </button>
 
         <h4 class="modal-title"><%= t 'bootsy.image.p' %></h4>
-        <%= 'Debugging' + Bootsy.editor_options['short_post'] %>
+        <%= Bootsy.editor_options['short_post'].nil? %>
       </div>
 
       <div class="modal-body">
