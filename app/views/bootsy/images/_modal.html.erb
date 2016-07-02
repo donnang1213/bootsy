@@ -11,10 +11,12 @@
       </div>
 
       <div class="modal-body">
-        <div class="alert alert-info bootsy-click-thumbnail-alert">
-          <b><%= 'Remark: '%></b>
-          <%= 'Click on image thumbnail to insert image into the article' %>
-        </div>
+        <% if Bootsy.editor_options.short_post %>
+          <div class="alert alert-info bootsy-click-thumbnail-alert">
+            <b><%= 'Remark: '%></b>
+            <%= 'Click on image thumbnail to insert image into the article' %>
+          </div>
+        <% end %>
 
         <div class="text-muted bootsy-empty-alert">
           <%= t 'bootsy.no_images_uploaded' %>
