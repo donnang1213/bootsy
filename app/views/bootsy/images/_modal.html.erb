@@ -8,16 +8,15 @@
         </button>
 
         <h4 class="modal-title"><%= t 'bootsy.image.p' %></h4>
-        <%= Bootsy.editor_options[:short_post]  %>
+        <%= Bootsy.editor_options[:html]  %>
       </div>
 
       <div class="modal-body">
-        <% if Bootsy.editor_options['short_post'] == 'false' %>
-          <div class="alert alert-info bootsy-click-thumbnail-alert">
-            <b><%= 'Remark: '%></b>
-            <%= 'Click on image thumbnail to insert image into the article' %>
-          </div>
-        <% end %>
+
+        <div class="alert alert-info bootsy-click-thumbnail-alert">
+          <b><%= 'Remark: '%></b>
+          <%= 'Click on image thumbnail to insert image into the article' %>
+        </div>
 
         <div class="text-muted bootsy-empty-alert">
           <%= t 'bootsy.no_images_uploaded' %>
