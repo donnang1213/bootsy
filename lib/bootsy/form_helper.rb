@@ -25,13 +25,13 @@ module Bootsy
     #                                 editor. Available options are described ib
     #                                 the Bootsyinitializer file (which is the
     #                                 default for this argument).
-    def bootsy_area(object_name, method, options = {})
+    def bootsy_area(object_name, method, options = {}, short_post = false)
       container = options[:container] || options[:object]
 
       set_gallery_id(container, options)
 
       text_area(object_name, method, text_area_options(options)) +
-        modal(options, container) +
+        modal(options, container, short_post) +
         gallery_id_param(object_name, container, options)
     end
 
@@ -105,9 +105,9 @@ module Bootsy
       )
     end
 
-    def modal(options, container)
+    def modal(options, container, short_post = false)
       return unless enable_uploader?(options)
-      render('bootsy/images/modal', container: container)
+      render('bootsy/images/modal', container: container, short_post: short_post)
     end
   end
 end
