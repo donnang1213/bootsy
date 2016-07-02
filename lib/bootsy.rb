@@ -21,7 +21,8 @@ module Bootsy
     html: false,
     link: true,
     image: true,
-    color: true
+    color: true,
+    short_post: false
   }
 
   # Image versions available
