@@ -25,6 +25,7 @@ module Bootsy
     #                                 editor. Available options are described ib
     #                                 the Bootsyinitializer file (which is the
     #                                 default for this argument).
+
     def bootsy_area(object_name, method, options = {})
       container = options[:container] || options[:object]
 
@@ -107,7 +108,7 @@ module Bootsy
 
     def modal(options, container)
       return unless enable_uploader?(options)
-      render('bootsy/images/modal', container: container)
+      render('bootsy/images/modal', container: container, options: options)
     end
   end
 end

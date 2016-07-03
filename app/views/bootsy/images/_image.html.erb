@@ -3,7 +3,7 @@
     data: { confirm: t('bootsy.image.confirm.destroy'), type: 'json' },
     tabindex: '-1', role: 'menuitem', class: 'destroy-btn' do%>
     <i class="fa fa-times"></i>
-  <% end %>  
+  <% end %>
 
   <%= link_to image_tag(image.image_file.thumb.url), '#', class: 'thumbnail insert',
   data: { image_size: 'small', position: 'inline', is_mobile: is_mobile }%>

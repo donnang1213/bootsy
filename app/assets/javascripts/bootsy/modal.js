@@ -53,8 +53,13 @@ Bootsy.Modal = function(area) {
   this.$el.on('click', 'a[href="#refresh-gallery"]', this.requestImageGallery.bind(this));
 
   this.$el.on('ajax:success', '.bootsy-upload-form', function(_e, data) {
+    var image = data.image;
+    if(this.area.$el.data().bootsyShort) {
+      image = image
+          .replace(/(<a class="thumbnail insert" data-image-size="small" data-is-mobile=".*" data-position="inline" href="#">)(.+\/>)(<\/a>)/, "$2");
+    }
     this.area.setImageGalleryId(data.gallery_id);
-    this.addImage(data.image);
+    this.addImage(image);
     this.setUploadForm(data.form);
   }.bind(this));
 
@@ -66,12 +71,11 @@ Bootsy.Modal = function(area) {
     }
   }.bind(this));
 
-  this.$el.on('load', '.bootsy-image', function() {
-    alert('image loaded');
-  });
-
   this.hideRefreshButton();
   this.hideEmptyAlert();
+
+  if(this.area.$el.data().bootsyShort) {
+  }
 };
 
 // Show modal
