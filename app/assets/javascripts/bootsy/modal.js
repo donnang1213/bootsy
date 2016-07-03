@@ -36,6 +36,7 @@ Bootsy.Modal = function(area) {
     }
 
     self.$el.modal('hide');
+    console.log(self.area);
 
     insert = self.area.insertImage.bind(self.area);
     insert(imageObject);
@@ -64,6 +65,10 @@ Bootsy.Modal = function(area) {
       this.requestImageGallery();
     }
   }.bind(this));
+
+  this.$el.on('load', '.bootsy-image', function() {
+    alert('image loaded');
+  });
 
   this.hideRefreshButton();
   this.hideEmptyAlert();
